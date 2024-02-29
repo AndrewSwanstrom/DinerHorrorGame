@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 8005541875086734181, guid: 324a945ac1a36024780daea009ac17df,
         type: 3}
       propertyPath: m_Name
-      value: HardModeWater
+      value: HardModeWater Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 324a945ac1a36024780daea009ac17df, type: 3}

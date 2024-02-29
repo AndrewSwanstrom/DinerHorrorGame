@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 1090004142279298817, guid: e34447a15470ddb4995e98a46ce9a60a,
         type: 3}
       propertyPath: m_Name
-      value: NormalModeWater
+      value: NormalModeWater Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1090004142279298817, guid: e34447a15470ddb4995e98a46ce9a60a,
+        type: 3}
+      propertyPath: m_TagString
+      value: DisableTag
       objectReference: {fileID: 0}
     - target: {fileID: 4571772006647777182, guid: e34447a15470ddb4995e98a46ce9a60a,
         type: 3}
