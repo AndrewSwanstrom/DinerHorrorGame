@@ -10,14 +10,12 @@ public class AudioController: MonoBehaviour
 
     void Start()
     {
-        // Get the AudioSource component attached to this GameObject
+
         audioSource = GetComponent<AudioSource>();
 
-        // Make sure an AudioClip is assigned
         if (backgroundMusic != null)
         {
-            // Start the coroutine to play music after 10 seconds
-            StartCoroutine(PlayMusicAfterDelay(10f));
+            StartCoroutine(PlayMusicAfterDelay(12f));
         }
         else
         {

@@ -617,7 +617,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 741efe96e4a83e24f85af5851c9e1f64, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 0.2
   Loop: 0
   Mute: 0
@@ -708,11 +708,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6662442903458128824, guid: 8e2ffbf34a218d6499790c52fed084c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -892
+      objectReference: {fileID: 0}
     - target: {fileID: 6662442903458128825, guid: 8e2ffbf34a218d6499790c52fed084c8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1240951073}
+    - target: {fileID: 6662442904683790460, guid: 8e2ffbf34a218d6499790c52fed084c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -751
+      objectReference: {fileID: 0}
     - target: {fileID: 6662442904683790461, guid: 8e2ffbf34a218d6499790c52fed084c8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -732,6 +742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771784409359448485, guid: 8e2ffbf34a218d6499790c52fed084c8,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6771784409359448485, guid: 8e2ffbf34a218d6499790c52fed084c8,
         type: 3}
