@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour
 
     private float rotationX = 0f;
 
+    //Pause Stuff
+    public GameObject pausePanel;
+    private bool isPaused = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -25,6 +30,14 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         originalCameraPosition = playerCamera.transform.localPosition;
+
+        //Pause Code for Start
+        {
+            if (pausePanel != null)
+            {
+                pausePanel.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -32,6 +45,23 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         RotatePlayer();
         BobCamera();
+
+        //Pause Code
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                isPaused = !isPaused;
+
+                if (isPaused)
+                {
+                    Pause();
+                }
+                else
+                {
+                    Resume();
+                }
+            }
+        }
     }
 
     void MovePlayer()
@@ -50,17 +80,20 @@ public class PlayerController : MonoBehaviour
 
     void RotatePlayer()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+        if (!isPaused) // Check if the game is not paused
+        {
+            float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+            float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
 
-        rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
+            rotationX -= mouseY;
+            rotationX = Mathf.Clamp(rotationX, -90f, 90f);
 
-        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
-        transform.rotation *= Quaternion.Euler(0f, mouseX, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+            transform.rotation *= Quaternion.Euler(0f, mouseX, 0f);
+        }
     }
 
-     void BobCamera()
+    void BobCamera()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
@@ -84,4 +117,39 @@ public class PlayerController : MonoBehaviour
             playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, originalCameraPosition, Time.deltaTime * bobbingSpeed);
         }
     }
+    void Pause()
+    {
+        // Pause the game
+        Time.timeScale = 0f;
+
+        // Show the pause panel
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(true);
+        }
+
+        // Unlock the cursor for UI interaction
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void Resume()
+    {
+        // Unpause the game
+        Time.timeScale = 1f;
+
+        // Hide the pause panel
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
+
+        // Lock the cursor back for gameplay only if the game is not paused
+        if (!isPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
 }
