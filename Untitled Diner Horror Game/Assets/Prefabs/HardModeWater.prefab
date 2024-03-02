@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 8789316988944036311}
   - component: {fileID: 4802441566999119247}
   - component: {fileID: 60689923610840963}
-  - component: {fileID: 9103007617931006159}
-  - component: {fileID: 8469381269882448206}
+  - component: {fileID: 5187294540233666649}
   m_Layer: 0
   m_Name: HardModeWater
   m_TagString: WaterCup
@@ -85,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9103007617931006159
+--- !u!114 &5187294540233666649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,19 +93,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3699174406572695580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c16117f402701a4b982b2a75124f7c6, type: 3}
+  m_Script: {fileID: 11500000, guid: a91b7fd5753e1c442831a531c59bda0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &8469381269882448206
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3699174406572695580}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0030743044, y: 0.0071595334, z: 0.0030733135}
-  m_Center: {x: 0, y: 0, z: 0}
