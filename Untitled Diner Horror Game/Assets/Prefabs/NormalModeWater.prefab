@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 5696344798930602488}
   - component: {fileID: 8381521582962130336}
   - component: {fileID: 3900974312935569324}
+  - component: {fileID: 3524129175960780590}
   m_Layer: 0
   m_Name: NormalModeWater
-  m_TagString: Untagged
+  m_TagString: WaterCup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5696344798930602488
 Transform:
@@ -83,3 +84,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3524129175960780590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406042874259232819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c16117f402701a4b982b2a75124f7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
