@@ -1,22 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SanityController : MonoBehaviour
 {
-    private float initialSanity = 200f;
-    private float currentSanity;
-    private float sanityDecreaseRate = 10f;
+    public float initialSanity = 200f;
+    public float sanityDecreaseRate = 2f;
+    public float currentSanity;
+
+    public float interactionRange = 3f;
+    public KeyCode interactionKey = KeyCode.E;
+    public Color highlightColor = Color.green;
+    public UnityEngine.AI.NavMeshAgent enemy;
+    public float enemySpeedBuff = 2.75f;
+
+    private List<WaterCup> waterCups = new List<WaterCup>();
+    private WaterCup currentWaterCup;
+
+    //UI
+    public TextMeshProUGUI text;
+    public Image sanityImage;
+    public Sprite fullSanitySprite;
+    public Sprite drainingSanitySprite;
 
     void Start()
     {
         currentSanity = initialSanity;
+        Debug.Log(currentSanity);
         InvokeRepeating("DecreaseSanity", 2f, 2f);
+
+        waterCups.AddRange(FindObjectsOfType<WaterCup>());
     }
 
     void Update()
     {
-        Debug.Log(currentSanity);
+        if (Input.GetKeyDown(interactionKey))
+        {
+            Debug.Log("E Pressed");
+            PickUpWaterCup();
+        }
+        CheckForWaterCup();
     }
 
     void DecreaseSanity()
@@ -26,23 +51,109 @@ public class SanityController : MonoBehaviour
         if (currentSanity <= 0)
         {
             currentSanity = 0;
-            GameOver(); 
+            GameOver();
         }
+
+        // Update sanity image UI
+        UpdateSanityImage();
     }
 
-    void GameOver()
+    void UpdateSanityImage()
+    {
+        if (currentSanity > 0)
+        {
+            sanityImage.sprite = fullSanitySprite;
+        }
+        else
+        {
+            sanityImage.sprite = drainingSanitySprite;
+        }
+        // Update sanity text UI
+        text.text = currentSanity.ToString();
+    }
+
+        void GameOver()
     {
         Debug.Log("Game Over");
     }
 
-    void GainSanity(int amount)
+    public void GainSanity(int amount)
     {
         currentSanity += amount;
     }
 
-    public void OnItemPickup()
+    public void OnItemPickup(GameObject cupObject)
     {
+        Debug.Log("u picked up the water cup");
+        waterCups.Remove(cupObject.GetComponent<WaterCup>());
         GainSanity(10);
-        Debug.Log("Gained 10 sanity");
+        Destroy(cupObject);
+    }
+
+    void CheckForWaterCup()
+    {
+        waterCups.RemoveAll(cup => cup == null);
+
+        if (waterCups.Count > 0)
+        {
+            WaterCup closestWaterCup = FindClosestWaterCup();
+
+
+            if (closestWaterCup != null && closestWaterCup != currentWaterCup)
+            {
+                if (currentWaterCup != null)
+                {
+                    currentWaterCup.ResetColor();
+                }
+
+                currentWaterCup = closestWaterCup;
+                currentWaterCup.HighlightCup(highlightColor);
+                Debug.Log("In interaction range with water cup...");
+            }
+            else if (closestWaterCup == null && currentWaterCup != null)
+            {
+                if (currentWaterCup.gameObject != null)
+                {
+                    currentWaterCup.ResetColor();
+                }
+                currentWaterCup = null;
+            }
+        }
+    }
+
+    void PickUpWaterCup()
+    {
+        Debug.Log("PickUpWaterCup");
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
+        {
+            Debug.Log("Raycast");
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject.CompareTag("WaterCup"))
+            {
+                Debug.Log("If statement hit");
+                OnItemPickup(hitObject);
+            }
+        }
+    }
+
+    WaterCup FindClosestWaterCup()
+    {
+        WaterCup closestWaterCup = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (WaterCup waterCup in waterCups)
+        {
+            float distance = Vector3.Distance(transform.position, waterCup.transform.position);
+
+            if (distance <= interactionRange && distance < closestDistance)
+            {
+                closestWaterCup = waterCup;
+                closestDistance = distance;
+            }
+        }
+
+        return closestWaterCup;
     }
 }
