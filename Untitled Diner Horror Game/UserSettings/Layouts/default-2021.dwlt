@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 27
+  controlID: 55
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 605
     height: 1299
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 484
     height: 770
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 28
+  controlID: 56
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 29
+  controlID: 57
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -277,7 +277,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -312,14 +312,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: -370285639996585212, guid: 034b71216b275ee4eba62e77918dde2f, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1.15
+    - e00: 0.93400735
       e01: 0
       e02: 0
-      e03: 58.200016
+      e03: 29.561882
       e10: 0
-      e11: 1.15
+      e11: 0.93400735
       e12: 0
-      e13: 258.2
+      e13: 188.63097
       e20: 0
       e21: 0
       e22: 1
@@ -417,23 +417,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models
+    - Assets/Models/Prefabs_Models
     m_Globs: []
     m_OriginalText: 
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Models
+  - Assets/Models/Prefabs_Models
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\andre\DinerHorrorGame\Untitled Diner Horror Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6c870000
-    m_LastClickedID: 34668
-    m_ExpandedIDs: 000000009c8500006c870000fc87000000ca9a3b
+    m_SelectedIDs: f4870000
+    m_LastClickedID: 34804
+    m_ExpandedIDs: 00000000b28500008087000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -461,7 +461,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009c850000
+    m_ExpandedIDs: 00000000b2850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7a97feff
-      m_LastClickedID: 0
-      m_ExpandedIDs: 2268feff3e68feff9c74feffb874feff36fbffffbc730000ee760000ac7f0000168100001a810000
+      m_SelectedIDs: 4a68ffff
+      m_LastClickedID: -38838
+      m_ExpandedIDs: 36fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -912,9 +912,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.799281, y: -3.4049006, z: -43.911194}
+    m_Target: {x: -2.8777597, y: -4.6621265, z: -43.545734}
     speed: 2
-    m_Value: {x: -6.799281, y: -3.4049006, z: -43.911194}
+    m_Value: {x: -2.8777597, y: -4.6621265, z: -43.545734}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -961,9 +961,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.07587209, y: -0.89529675, z: 0.1658236, w: 0.4074713}
+    m_Target: {x: -0.053116493, y: -0.94409835, z: 0.1913269, w: -0.26478195}
     speed: 2
-    m_Value: {x: 0.07522995, y: -0.8951673, z: 0.16441078, w: 0.4074128}
+    m_Value: {x: -0.053380515, y: -0.9432953, z: 0.19116497, w: -0.2660836}
   m_Size:
     m_Target: 8.535063
     speed: 2
@@ -1055,7 +1055,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
