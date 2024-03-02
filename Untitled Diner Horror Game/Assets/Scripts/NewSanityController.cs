@@ -11,6 +11,8 @@ public class NewSanityController : MonoBehaviour
     public float interactionRange = 3f;
     public KeyCode interactionKey = KeyCode.E;
     public Color highlightColor = Color.green;
+    public UnityEngine.AI.NavMeshAgent enemy;
+    public float enemySpeedBuff = 2.75f;
 
     private List<WaterCup> waterCups = new List<WaterCup>();
     private WaterCup currentWaterCup;
@@ -28,7 +30,8 @@ public class NewSanityController : MonoBehaviour
     {
         if (Input.GetKeyDown(interactionKey))
         {
-            PickUpWaterCup();;
+            Debug.Log("E Pressed");
+            PickUpWaterCup();
         }
         CheckForWaterCup();
     }
@@ -40,7 +43,7 @@ public class NewSanityController : MonoBehaviour
         if (currentSanity <= 0)
         {
             currentSanity = 0;
-            GameOver();
+            enemy.speed = enemySpeedBuff;
         }
     }
 
@@ -95,9 +98,11 @@ public class NewSanityController : MonoBehaviour
 
     void PickUpWaterCup()
     {
+        Debug.Log("PickUpWaterCup");
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, interactionRange))
         {
+            Debug.Log("Raycast");
             GameObject hitObject = hit.collider.gameObject;
         
             if (hitObject.CompareTag("WaterCup")) 
