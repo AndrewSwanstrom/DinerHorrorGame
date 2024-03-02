@@ -9,6 +9,12 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController characterController;
     private Camera playerCamera;
+    private Vector3 originalCameraPosition;
+
+    public float bobbingAmount = 0.1f;
+    public float bobbingSpeed = 10f;
+
+    private float bobbingTimer = 0f;
 
     private float rotationX = 0f;
 
@@ -18,12 +24,14 @@ public class PlayerController : MonoBehaviour
         playerCamera = GetComponentInChildren<Camera>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        originalCameraPosition = playerCamera.transform.localPosition;
     }
 
     void Update()
     {
         MovePlayer();
         RotatePlayer();
+        BobCamera();
     }
 
     void MovePlayer()
@@ -50,5 +58,30 @@ public class PlayerController : MonoBehaviour
 
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
         transform.rotation *= Quaternion.Euler(0f, mouseX, 0f);
+    }
+
+     void BobCamera()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        if (Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
+        {
+            float bobbingAmountThisFrame = Mathf.Sin(bobbingTimer) * bobbingAmount;
+
+            Vector3 bobbingPosition = originalCameraPosition;
+            bobbingPosition.y += bobbingAmountThisFrame;
+
+            playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, bobbingPosition, Time.deltaTime * bobbingSpeed);
+
+            bobbingTimer += Time.deltaTime * bobbingSpeed;
+        }
+        else
+        {
+
+            bobbingTimer = 0f;
+            
+            playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, originalCameraPosition, Time.deltaTime * bobbingSpeed);
+        }
     }
 }
