@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7301243722441303191
 Transform:
@@ -47,7 +47,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4049332147047449737
 Transform:
@@ -123,12 +123,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7864145084909295055}
+  - component: {fileID: 1786012335}
   m_Layer: 0
   m_Name: metaltable (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7864145084909295055
 Transform:
@@ -139,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 7379393066497953653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8912053, y: -0.028, z: -17.16647}
-  m_LocalScale: {x: 35.922, y: 35.922, z: 35.922}
+  m_LocalScale: {x: 35.921997, y: 35.922, z: 35.921997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7301243722441303191}
@@ -147,3 +148,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1786012335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7379393066497953653}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07178873, y: 0.037304208, z: 0.033620458}
+  m_Center: {x: 0.00026916838, y: 0.017963657, z: 0.00026979393}

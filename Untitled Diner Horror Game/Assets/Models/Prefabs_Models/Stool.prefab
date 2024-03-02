@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6371243538248736002}
   - component: {fileID: 5688464114872457119}
   - component: {fileID: 5029546542040294872}
+  - component: {fileID: 4346006046211597754}
   m_Layer: 0
   m_Name: Stool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 1
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6371243538248736002
 Transform:
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8861622642419274017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.834931, y: -0.001, z: 3.366}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 39.617, y: 39.617, z: 39.617}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4346006046211597754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861622642419274017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0156162735, y: 0.027525403, z: 0.015611244}
+  m_Center: {x: 0, y: 0, z: 0}
