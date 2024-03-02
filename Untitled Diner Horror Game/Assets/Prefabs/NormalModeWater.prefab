@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8381521582962130336}
   - component: {fileID: 3900974312935569324}
   - component: {fileID: 1619089933285280307}
+  - component: {fileID: 4722986216854116766}
   m_Layer: 0
   m_Name: NormalModeWater
   m_TagString: WaterCup
@@ -96,3 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91b7fd5753e1c442831a531c59bda0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &4722986216854116766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406042874259232819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0030743044, y: 0.0071595334, z: 0.0030733135}
+  m_Center: {x: 0, y: 0, z: 0}
